@@ -51,11 +51,14 @@ public class EventDispatcher implements INotificationSupport,
 
 	private INotificationListener[] listeners = new INotificationListener[4];
 
+	final private Object lockTrigger = new Object();
+
 	public EventDispatcher(Object pOwner) {
 		super();
 		owner = pOwner;
 	}
 
+	@Override
 	public synchronized void addNotificationListener(EventType type,
 			INotificationListener listener) {
 		if (listener == null) {
@@ -131,15 +134,24 @@ public class EventDispatcher implements INotificationSupport,
 		return temp.toArray(new EventType[temp.size()]);
 	}
 
+	@Override
 	public void handleEvent(Event event) {
-		Object typeId = event.getEventType();
-		int length = listeners.length;
-		for (int i = 0; i < length; i++) {
-			Object id = types[i];
-			if (id != typeId && id != EventType.ALWAYS) {
-				continue;
+		List<INotificationListener> triggered;
+		synchronized (this) {
+			triggered = new ArrayList<>(listeners.length);
+			Object typeId = event.getEventType();
+			int length = listeners.length;
+			for (int i = 0; i < length; i++) {
+				Object id = types[i];
+				if (id != typeId && id != EventType.ALWAYS) {
+					continue;
+				}
+				triggered.add(listeners[i]);
 			}
-			listeners[i].handleEvent(event);
+		}
+		// do not hold lock on this when calling out
+		for (INotificationListener trigger : triggered) {
+			trigger.handleEvent(event);
 		}
 	}
 
@@ -168,6 +180,7 @@ public class EventDispatcher implements INotificationSupport,
 		return true;
 	}
 
+	@Override
 	public synchronized void removeNotificationListener(EventType type,
 			INotificationListener listener) {
 		int length = listeners.length;
@@ -187,13 +200,21 @@ public class EventDispatcher implements INotificationSupport,
 	}
 
 	public void triggerEventReverse(Event event) {
-		Object typeId = event.getEventType();
-		for (int i = listeners.length; i >= 0; i--) {
-			Object id = types[i];
-			if (id != typeId && id != EventType.ALWAYS) {
-				continue;
+		List<INotificationListener> triggered;
+		synchronized (this) {
+			triggered = new ArrayList<>(listeners.length);
+			Object typeId = event.getEventType();
+			for (int i = listeners.length; i >= 0; i--) {
+				Object id = types[i];
+				if (id != typeId && id != EventType.ALWAYS) {
+					continue;
+				}
+				triggered.add(listeners[i]);
 			}
-			listeners[i].handleEvent(event);
+		}
+		// do not hold lock on this when calling out
+		for (INotificationListener trigger : triggered) {
+			trigger.handleEvent(event);
 		}
 	}
 }

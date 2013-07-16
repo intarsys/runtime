@@ -16,7 +16,7 @@ There are no dependencies beside the Java runtime.
 
 h2. Usage
 
-A pre-build jar file is available in the "deploy" folder.  
+A pre-built jar file is available in the "deploy" folder.  
 
 To be done...
 
@@ -56,7 +56,9 @@ bc.
 
 h2. Service & Support
 
-If you need further support, feel free to contact us.
+Service&support should be funneled through the tools available with Github.
+
+If you need further assistance, contact us.
 
 bc. 
 intarsys consulting GmbH
@@ -66,7 +68,3 @@ Fon +49 721 38479-0
 Fax +49 721 38479-60
 info@intarsys.de
 www.intarsys.de
-
-p. 
-For service and support contact <a href="mailto://support@intarsys.de">support@intarsys.de</a>
-
