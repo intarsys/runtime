@@ -1,0 +1,17 @@
+
+<script class="de.intarsys.tools.macro.MacroBlock">
+  <block>
+    <step class="de.intarsys.tools.macro.MacroAssign" assignTo="rb1">
+      <value result="b1">
+      </value>
+    </step>
+    <step class="de.intarsys.tools.macro.MacroAssign" assignTo="rb2">
+      <value result="b2">
+      </value>
+    </step>
+    <step class="de.intarsys.tools.macro.MacroAssign" assignTo="rb3">
+      <value result="b3">
+      </value>
+    </step>
+  </block>
+</script>

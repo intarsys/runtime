@@ -1,0 +1,11 @@
+<call>
+	<declarations>
+		<arg name="someString" value="someStringValue" type="java.lang.String" />
+		<arg name="someEmptyDeclaratrion" />
+		<arg name="someArgs">
+			<arg name="someStringDescendant1" value="lala" type="java.lang.String" />
+			<arg name="someBooleanDescendant1" value="true" type="java.lang.Boolean" />
+		</arg>
+		<arg name="someDefinedString" value="defined in declarations" type="java.lang.String" />
+	</declarations>
+</call>

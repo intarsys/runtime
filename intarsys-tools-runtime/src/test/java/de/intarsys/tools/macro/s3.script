@@ -1,0 +1,11 @@
+
+<script class="de.intarsys.tools.macro.MacroBlock">
+  <block>
+    <step result="b1">
+    </step>
+    <step result="b2">
+    </step>
+    <step result="b3">
+    </step>
+  </block>
+</script>

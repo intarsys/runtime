@@ -1,0 +1,14 @@
+plugins {
+	id 'java-library'
+	id 'eclipse-wtp'
+}
+
+dependencies {
+	api libs.jakartaAnnotationApi
+	implementation libs.jakartaXmlBindApi
+	
+	testImplementation testLibs.junit4
+	testImplementation testLibs.hamcrestCore
+	testImplementation testLibs.hamcrestLibrary
+	testRuntimeOnly libs.jaxbRuntime
+}

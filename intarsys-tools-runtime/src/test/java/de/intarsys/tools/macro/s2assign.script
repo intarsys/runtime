@@ -1,0 +1,9 @@
+
+<script class="de.intarsys.tools.macro.MacroBlock">
+  <block>
+    <step class="de.intarsys.tools.macro.MacroAssign" assignTo="rb1">
+      <value result="b1">
+      </value>
+    </step>
+  </block>
+</script>

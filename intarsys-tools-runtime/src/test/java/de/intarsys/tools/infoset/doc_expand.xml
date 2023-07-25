@@ -1,0 +1,4 @@
+<diedel>
+	<doedel a="${a}" b="${${}b}" c=" ${c} " >
+	</doedel>
+</diedel>

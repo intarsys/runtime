@@ -1,0 +1,5 @@
+rootProject.name = 'is-lib-runtime'
+
+include 'intarsys-tools-runtime'
+
+apply from: 'dependencies.gradle'

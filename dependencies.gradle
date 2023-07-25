@@ -1,0 +1,17 @@
+dependencyResolutionManagement {
+	versionCatalogs {
+		libs {
+			library('jakartaAnnotationApi', 'jakarta.annotation:jakarta.annotation-api:1.3.5')
+			library('jakartaXmlBindApi', 'jakarta.xml.bind:jakarta.xml.bind-api:2.3.3')
+			library('jaxbRuntime', 'org.glassfish.jaxb:jaxb-runtime:2.3.5')
+		}
+
+		testLibs {
+			library('junit4', 'junit:junit:4.13.2')
+
+			version('hamcrest', '1.3')
+			library('hamcrestCore', 'org.hamcrest', 'hamcrest-core').versionRef('hamcrest')
+			library('hamcrestLibrary', 'org.hamcrest', 'hamcrest-library').versionRef('hamcrest')
+		}
+	}
+}

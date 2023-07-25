@@ -1,0 +1,31 @@
+
+<script class="de.intarsys.tools.macro.MacroBlock">
+  <block>
+    <step class="de.intarsys.tools.macro.MacroAssign" assignTo="rb1">
+      <value result="b1">
+      </value>
+    </step>
+    <step class="de.intarsys.tools.macro.MacroAssign" assignTo="rb2">
+      <value result="b2">
+      </value>
+    </step>
+    <step class="de.intarsys.tools.macro.MacroAssign" assignTo="rb3">
+      <value result="b3">
+      </value>
+    </step>
+  </block>
+  <finally>
+    <step class="de.intarsys.tools.macro.MacroAssign" assignTo="rf1">
+      <value result="f1">
+      </value>
+    </step>
+    <step class="de.intarsys.tools.macro.MacroAssign" assignTo="rf2">
+      <value result="f2">
+      </value>
+    </step>
+    <step class="de.intarsys.tools.macro.MacroAssign" assignTo="rf3">
+      <value result="f3">
+      </value>
+    </step>
+  </finally>
+</script>

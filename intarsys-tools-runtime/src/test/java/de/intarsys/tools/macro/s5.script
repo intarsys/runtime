@@ -1,0 +1,27 @@
+
+<script class="de.intarsys.tools.macro.MacroBlock">
+  <block>
+    <step result="b1">
+    </step>
+    <step result="b2">
+    </step>
+    <step result="b3">
+    </step>
+  </block>
+  <error>
+    <step result="e1">
+    </step>
+    <step result="e2">
+    </step>
+    <step result="e3">
+    </step>
+  </error>
+  <finally>
+    <step result="f1">
+    </step>
+    <step result="f2">
+    </step>
+    <step result="f3">
+    </step>
+  </finally>
+</script>
